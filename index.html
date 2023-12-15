@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+        <ion-icon name="eye-outline" class="modal__open"></ion-icon>
+        <span class="password__count">0</span>
+
+      <form action="" class="form" id="password-form">
+        <h1 class="form__title">Password Generator</h1>
+
+        <label for="count" class="form__label form__label--input">
+          password length
+          <input type="number" name="count" id="count" class="form__input" />
+        </label>
+
+        <div class="form__group form__group--checkbox">
+          <label for="words" class="form__label">
+            <input
+              type="checkbox"
+              name="words"
+              id="words"
+              class="form__input form__input--checkbox"
+            />
+            <span class="form__checkbox"></span>
+            words
+          </label>
+
+          <label for="numbers" class="form__label">
+            <input
+              type="checkbox"
+              name="numbers"
+              id="numbers"
+              class="form__input form__input--checkbox"
+            />
+            <span class="form__checkbox"></span>
+            numbers
+          </label>
+
+          <label for="symbols" class="form__label">
+            <input
+              type="checkbox"
+              name="symbols"
+              id="symbols"
+              class="form__input form__input--checkbox"
+            />
+            <span class="form__checkbox"></span>
+            symbols
+          </label>
+        </div>
+
+        <button type="submit" class="form__button">Generate Password</button>
+      </form>
+
+      <div class="modal">
+        <div class="modal__row">
+          <h2 class="modal__title">Password List</h2>
+          <ion-icon name="close-outline" class="modal__close"></ion-icon>
+        </div>
+
+        <div class="modal__content"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>

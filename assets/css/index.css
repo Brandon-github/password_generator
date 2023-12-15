@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.16);
+}
+
+.form__title {
+    color: #222;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form__title::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: #222;
+}
+
+.form__label {
+    color: #222;
+    font-weight: 800;
+    line-height: 1.9em;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.form__label.form__label--input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border-style: none;
+    border: 1px solid #0efe5c;
+    padding: 0.5rem 0.8rem;
+    outline: none;
+    width: 100%;
+} 
+
+.form__input--checkbox {
+    display: none;
+}
+
+.form__checkbox {
+   position: relative;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   display: inline-block;
+   background-color: transparent;
+   border: 1px solid #222;
+   transition: .3s linear;
+}
+
+.form__input--checkbox:checked ~ .form__checkbox {
+    background-color: rgb(4, 255, 16);
+}
+
+.form__group {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.form__button {
+    width: 100%;
+    padding: 0.8em 0;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #0efe5c;
+    color: #222;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    
+}
+
+.form__button:hover {
+    background-color: #0cb845;
+    color: #fff;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    width: 500px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s linear;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__open,
+.modal__close {
+    color: #222;
+    cursor: pointer;
+}
+
+.modal__open {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 2.5rem;
+}
+
+.modal__close {
+    font-size: 2.5rem;
+}
+
+.modal__title {
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.modal__content {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+    width: 2px;
+}
+
+.modal__item {
+    width: 100%;
+    padding: 20px;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal__input {
+    border-style: none;
+    user-select: none;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.modal__copy {
+    background-color: #0efe5c;
+    padding: 8px 10px;
+    color: #222;
+    border-style: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.modal__copy:hover {
+    background-color: royalblue;
+}
+
+.password__count {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #0efe5c;
+    color: #222;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-5px);
+    opacity: 0;
+    transition: .3s linear;
+    user-select: none;
+    pointer-events: none;
+}
+
+.password__count.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
